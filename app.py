@@ -6,12 +6,16 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-capabilities = DesiredCapabilities.ANDROID
+capabilities = DesiredCapabilities.PHANTOMJS
 # capabilities['platform'] = "WINDOWMS"
 # capabilities['version'] = "10"
 
-driver = webdriver.PhantomJS(desired_capabilities=capabilities)
+driver = webdriver.Firefox(capabilities=capabilities)
 driver.get('http://www.google.com')
+
+time.sleep(1)
+driver.execute_script('alert("Alert here!");')
+
 # returns False is encounters an IO error otherwise True
 print driver.get_screenshot_as_file('Screenshots/file.png')
 
