@@ -17,7 +17,9 @@ elem = driver.find_element_by_id('lst-ib')
 # Clear out the field
 elem.clear()
 # Provide input to the element then press enter key to trigger form submit
-elem.send_keys('this is a testing selenium')
+string = 'this is a testing selenium'
+elem.send_keys(string)
+assert string == elem.get_attribute('value')
 elem.send_keys(Keys.RETURN)
 # close browser
 driver.close()
