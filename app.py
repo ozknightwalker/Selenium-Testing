@@ -4,27 +4,18 @@ from __future__ import unicode_literals
 import time
 
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-# Wait is use as an alternative for time.sleep and in a way more efficient
+capabilities = DesiredCapabilities.ANDROID
+# capabilities['platform'] = "WINDOWMS"
+# capabilities['version'] = "10"
 
-driver = webdriver.Firefox()
-#  We visit facebook
-driver.get("http://www.google.com")
-try:
-    box = driver.find_element_by_name('q')
-    box.send_keys('Selenium')
-    button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable(
-        (By.NAME, 'btnG')))
-    button.click()
-except TimeoutException:
-    print("Box or Button not found in google.com")
+driver = webdriver.PhantomJS(desired_capabilities=capabilities)
+driver.get('http://www.google.com')
+# returns False is encounters an IO error otherwise True
+print driver.get_screenshot_as_file('Screenshots/file.png')
 
-# or just set the implicit wait implicitly_wait(seconds) 
-driver.implicitly_wait(10)  # seconds
+
 # wait for 2secs just a preview time
 time.sleep(2)
 driver.close()
