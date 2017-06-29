@@ -17,7 +17,7 @@ time.sleep(1)
 driver.execute_script('alert("Alert here!");')
 
 # returns False is encounters an IO error otherwise True
-print driver.get_screenshot_as_file('Screenshots/file.png')
+print(driver.get_screenshot_as_file('Screenshots/file.png'))
 
 
 # wait for 2secs just a preview time
