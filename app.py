@@ -32,10 +32,10 @@ password.send_keys(Keys.TAB, Keys.ARROW_DOWN, Keys.TAB, Keys.ARROW_DOWN)
 
 # get all input elements with a name `sex`
 genders = driver.find_elements_by_xpath('//input[@name="sex"]')
-print len(genders)
+print(len(genders))
 # iterate all gender and then trigger click events
 for gender in genders:
-    print gender.get_attribute('value')
+    print(gender.get_attribute('value'))
     gender.click()
 
 # Import Select module to use some helpful methos  for interacting
@@ -69,7 +69,7 @@ driver.forward()
 cookie = {'name': 'cookie', 'value': 'baked'}
 driver.add_cookie(cookie)
 # accessing the browser cookie
-print driver.get_cookies()
+print(driver.get_cookies())
 
 # And now output all the available cookies for the current URL
 driver.get_cookies()
