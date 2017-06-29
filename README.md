@@ -23,7 +23,7 @@ chmod +x geckodriver
 - Add geckodriver executable to your `PATH`. For testing purposes
 you can just
 ```
-EXPORT PATH=$PATH:[directory of where the driver/s are located]
+export PATH=$PATH:[directory of where the driver/s are located]
 ```
 or just make sure the drivers are located your PATH, e. g., place it in /usr/bin or /usr/local/bin.
 otherwise you may encounter error upon running selenium
