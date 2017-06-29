@@ -14,6 +14,9 @@ driver = webdriver.Firefox(capabilities=capabilities)
 driver.get('http://www.google.com')
 
 time.sleep(1)
+
+# this have a bug on the latest geckodriver
+# [https://bugzilla.mozilla.org/show_bug.cgi?id=1370850]
 driver.execute_script('alert("Alert here!");')
 
 # returns False is encounters an IO error otherwise True
